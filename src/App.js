@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Link } from 'react-router-dom';
+import Nav from './Component/Nav/Nav';
 
 const App = () => {
   let name = 'Lê Hưng';
@@ -14,6 +14,7 @@ const App = () => {
     <div className="App">
       {console.log('check obj: ', obj)}
       <header className="App-header">
+        <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Lê Phúc Hưng hello world,
