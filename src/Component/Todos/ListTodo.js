@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './ListTodo.scss'
-
+import './ListTodo.scss';
+import List from './List';
 
 const ListTodo = () => {
     const [todos, setTodos] = useState([
@@ -35,16 +35,7 @@ const ListTodo = () => {
                 <button type='button' onClick={(event) => handleOnClickAdd(event)} >Add</button>
             </div>
             <hr></hr>
-            <div className='list-content'>
-
-                {todos.map((item, index) => {
-                    return (
-                        <div className='todo-child' key={item.id}>
-                            {index + 1} - {item.title}
-                        </div>
-                    )
-                })}
-            </div>
+            <List todos={todos} />
         </div>
     )
 }
