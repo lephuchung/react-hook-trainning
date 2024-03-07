@@ -4,8 +4,8 @@ import List from './List';
 
 const ListTodo = () => {
     const [todos, setTodos] = useState([
-        { id: 'todo1', title: 'playing game' },
-        { id: 'todo2', title: 'watching video' }
+        { id: 'todo1', title: 'playing game', type: 'Noris' },
+        { id: 'todo2', title: 'watching video', type: 'Nora' }
     ]);
     const [todoAdd, setTodoAdd] = useState('');
 
@@ -21,7 +21,8 @@ const ListTodo = () => {
         }
         let todo = {
             id: 2,
-            title: todoAdd
+            title: todoAdd,
+            type: 'Noris'
         }
         setTodos([...todos, todo])
 
@@ -35,7 +36,8 @@ const ListTodo = () => {
                 <button type='button' onClick={(event) => handleOnClickAdd(event)} >Add</button>
             </div>
             <hr></hr>
-            <List todos={todos} />
+            <List todos={todos} title={"All"} />
+            <List todos={todos.filter(item => item.type === 'Noris')} title={'Noris'} />
         </div>
     )
 }
