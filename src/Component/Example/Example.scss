@@ -1,0 +1,9 @@
+.example-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .example-link{
+        background-color: #8a8a8a;
+    }
+}
