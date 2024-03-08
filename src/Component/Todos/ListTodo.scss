@@ -1,1 +1,23 @@
- 
+ h5{
+    margin: 0px;
+ }
+
+ button{
+    cursor: pointer;
+    margin: 0 5px;
+ }
+
+ .list-container{
+    width: 400px;
+    .list-content{
+        .todo-child{
+            text-align: left;
+            display: flex;
+            align-items: center;
+            h5{
+                margin: 0px;
+             }
+            
+        }
+    }
+ }
