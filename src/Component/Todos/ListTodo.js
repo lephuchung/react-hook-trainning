@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ListTodo.scss';
 import List from './List';
 
@@ -34,6 +34,14 @@ const ListTodo = () => {
         currentList = currentList.filter(item => item.id !== id);
         setTodos(currentList);
     }
+
+    useEffect(() => {
+        console.log('run useEffect did mount');
+    }, []);
+
+    useEffect(() => {
+        console.log('run useEffect did update add todo and delete todo');
+    }, [todoAdd, todos])
 
     return (
         <div className='list-container'>
