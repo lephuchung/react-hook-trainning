@@ -5,6 +5,7 @@ import Nav from './Component/Nav/Nav';
 import Example from './Component/Example/Example';
 import CheckEvent from './Component/CheckEvent/CheckEvent';
 import ListTodo from './Component/Todos/ListTodo';
+import Covid from './Component/Covid/Covid';
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         <h3>Lê Phúc Hưng hello world</h3>
         {/* <Example /> */}
         {/* <CheckEvent /> */}
-        <ListTodo />
+        {/* <ListTodo /> */}
+        <Covid />
       </header>
     </div>
   );

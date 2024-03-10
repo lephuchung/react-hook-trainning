@@ -1,0 +1,26 @@
+.covid-container{
+    width: 98%;
+    margin: 0 auto;
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      
+    th{
+        background-color: #646464;
+        border: 1px solid;
+        text-align: left;
+        padding: 8px;
+    }
+      
+      td {
+        border: 1px solid #747171;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #545454;
+      }
+    }
+}
