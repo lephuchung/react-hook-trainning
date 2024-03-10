@@ -1,37 +1,12 @@
 import './Covid.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { set } from 'immutable';
+import useFetch from '../../Customize/fetch';
 
 const Covid = () => {
-    const [dataCovid, setDataCovid] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
+    let url = 'https://covid-api.com/api/reports?date=2021-03-14&q=China%20Beijing&iso=CHN&region_name=China'
+    let { data: dataCovid, isLoading, isError } = useFetch(url);
 
-    const fetchData = async () => {
-        let data_url = 'https://covid-api.com/api/reports?date=2021-03-14&q=China%20Beijing&iso=CHN&region_name=China'
-        let res = await axios.get(data_url);
-        let data = res && res.data && res.data.data ? res.data.data : [];
-        console.log(data);
-        setDataCovid(data);
-        setIsLoading(false);
-        setIsError(false);
-    }
-
-    useEffect(() => {
-        try {
-            setTimeout(async () => {
-                fetchData();
-                console.log('check data: ', dataCovid);
-            }, 500)
-        }
-        catch (e) {
-            setIsError(true);
-            setIsLoading(false);
-        }
-
-
-    }, []);
     return (
         <div className='covid-container'>
             <hr></hr>
