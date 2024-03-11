@@ -1,6 +1,4 @@
 import './Covid.scss';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import useFetch from '../../Customize/fetch';
 
 const Covid = () => {
@@ -17,7 +15,6 @@ const Covid = () => {
                 <thead>
                     <tr>
                         <th>No.</th>
-
                         <th>Provine</th>
                         <th>Confirmed</th>
                         <th>Active</th>
