@@ -34,7 +34,7 @@ const Covid = () => {
                                     <td>{item.deaths}</td>
                                     <td>{item.recovered}</td>
                                 </tr>
-                                : <div><p>  </p></div>
+                                : ''
                             )
                         })
                     }
