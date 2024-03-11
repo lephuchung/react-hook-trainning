@@ -6,10 +6,13 @@ const useFetch = (data_url) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
+    // const ourRequest = axios.CancelToken.source();
 
     const fetchData = async (url) => {
 
-        let res = await axios.get(url);
+        let res = await axios.get(url
+            // ,{cancelToken: ourRequest.token,}
+        );
         let data = res && res.data && res.data.data ? res.data.data : [];
         // console.log(data);
         setData(data);
@@ -28,7 +31,9 @@ const useFetch = (data_url) => {
             setIsError(true);
             setIsLoading(false);
         }
-
+        // return () => {
+        //     ourRequest.cancel()
+        // }
 
     }, [data_url]);
 
