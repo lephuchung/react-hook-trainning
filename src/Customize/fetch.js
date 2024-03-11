@@ -30,7 +30,7 @@ const useFetch = (data_url) => {
         }
 
 
-    }, []);
+    }, [data_url]);
 
     return {
         data, isLoading, isError
