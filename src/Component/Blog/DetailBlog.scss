@@ -1,0 +1,30 @@
+.detail-blog-container{
+    display: flex;
+    flex-direction: column;
+    .blog-detail{
+        width: 80%;
+        margin: 0px auto;
+        border: 1px solid grey;
+        border-radius: 10px;
+        text-align: left;
+        .id{
+            margin: 2px 10px;
+            font-size: 10px;
+            color: rgb(216, 216, 216);
+        }
+        .title{
+            margin: 5px 10px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .body{
+            margin: 5px 10px;
+            font-size: 20px;
+            
+        }
+    }
+
+    .back-button{
+       align-self: center;
+    }
+}
