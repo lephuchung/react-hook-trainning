@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-const useFetch = (data_url) => {
+const useFetch = (data_url, isCovidData) => {
 
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -10,10 +10,19 @@ const useFetch = (data_url) => {
 
     const fetchData = async (url) => {
 
+        let data = '';
+
         let res = await axios.get(url
             // ,{cancelToken: ourRequest.token,}
         );
-        let data = res && res.data && res.data.data ? res.data.data : [];
+        isCovidData ?
+            (data = res && res.data && res.data.data ? res.data.data : [])
+            :
+            (data = res && res.data ? res.data : [])
+        // if (isCovidData) {
+        //     data = res && res.data && res.data.data ? res.data.data : [];
+        // }
+        // else data = res && res.data ? res.data : [];
         // console.log(data);
         setData(data);
         setIsLoading(false);
@@ -26,8 +35,10 @@ const useFetch = (data_url) => {
                 fetchData(data_url);
                 // console.log('check data: ', data);
             }, 500)
+            // fetchData(data_url);
         }
-        catch (e) {
+        catch (error) {
+            console.log('hahah');
             setIsError(true);
             setIsLoading(false);
         }
@@ -36,9 +47,10 @@ const useFetch = (data_url) => {
         // }
 
     }, [data_url]);
-
+    // console.log('check err: ', isError);
     return {
         data, isLoading, isError
+
     }
 }
 

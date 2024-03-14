@@ -12,6 +12,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Blog from './Component/Blog/Blog';
+import DetailBlog from './Component/Blog/DetailBlog';
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
             <Route path='/todo' element={<ListTodo />} />
             <Route path='/covid' element={<Covid />} />
             <Route path='/event' element={<CheckEvent />} />
+            <Route path='/blog/:id' element={<DetailBlog />} />
+            <Route path='/blog' element={<Blog />} />
             <Route path='/' element={<Example />} />
           </Routes>
         </header>
