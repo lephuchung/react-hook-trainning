@@ -3,7 +3,7 @@ import useFetch from '../../Customize/fetch';
 
 const Covid = () => {
     let url = 'https://covid-api.com/api/reports?date=2021-03-14&q=China%20Beijing&iso=CHN&region_name=China'
-    let { data: dataCovid, isLoading, isError } = useFetch(url);
+    let { data: dataCovid, isLoading, isError } = useFetch(url, true);
 
     return (
         <div className='covid-container'>

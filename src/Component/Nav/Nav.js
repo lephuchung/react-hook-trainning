@@ -8,6 +8,7 @@ const Nav = () => {
             <NavLink /*activeClassName="active"*/ to={"/event"}>Event</NavLink>
             <NavLink /*activeClassName="active"*/ to={"/todo"}>Todo</NavLink>
             <NavLink /*activeClassName="active"*/ to={"/covid"}>Covid</NavLink>
+            <NavLink to={"/blog"}>Blog</NavLink>
         </div>
     )
 }
