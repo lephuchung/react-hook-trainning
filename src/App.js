@@ -6,14 +6,15 @@ import Example from './Component/Example/Example';
 import CheckEvent from './Component/CheckEvent/CheckEvent';
 import ListTodo from './Component/Todos/ListTodo';
 import Covid from './Component/Covid/Covid';
+import Blog from './Component/Blog/Blog';
+import DetailBlog from './Component/Blog/DetailBlog';
+import AddNewBlog from './Component/Blog/AddNewBlog';
 import {
   BrowserRouter,
   Routes,
   Route,
   Link
 } from "react-router-dom";
-import Blog from './Component/Blog/Blog';
-import DetailBlog from './Component/Blog/DetailBlog';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path='/covid' element={<Covid />} />
             <Route path='/event' element={<CheckEvent />} />
             <Route path='/blog/:id' element={<DetailBlog />} />
+            <Route path='/blog/add-new-blog' element={<AddNewBlog />} />
             <Route path='/blog' element={<Blog />} />
             <Route path='/' element={<Example />} />
           </Routes>
