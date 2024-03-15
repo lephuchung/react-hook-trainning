@@ -13,23 +13,30 @@ const Blog = () => {
     }
     console.log('check data', dataBlog);
     return (
-        <div className='blog-list'>
-            {newData && newData.length > 0 &&
-                newData.map((item, index) => {
-                    return (
-                        <div key={item.id} className='blog-child'>
-                            <div className='title'>{item.title} </div>
-                            <div className='body'>{item.body} </div>
-                            <Link to={`/blog/${item.id}`} style={{ textDecoration: 'none' }}>
-                                <button>View detail</button>
-                            </Link>
-                        </div>
-                    )
-                })}
-            {isLoading === true &&
-                <div className='loading'>Loading...</div>
-            }
-        </div>
+        <>
+            <div className='add-blog'>
+                <span className='add-blog-btn'>
+                    <Link to={'/blog/add-new-blog'}>Add new blog</Link>
+                </span>
+            </div>
+            <div className='blog-list'>
+                {newData && newData.length > 0 &&
+                    newData.map((item, index) => {
+                        return (
+                            <div key={item.id} className='blog-child'>
+                                <div className='title'>{item.title} </div>
+                                <div className='body'>{item.body} </div>
+                                <Link to={`/blog/${item.id}`} style={{ textDecoration: 'none' }}>
+                                    <button>View detail</button>
+                                </Link>
+                            </div>
+                        )
+                    })}
+                {isLoading === true &&
+                    <div className='loading'>Loading...</div>
+                }
+            </div>
+        </>
     )
 }
 

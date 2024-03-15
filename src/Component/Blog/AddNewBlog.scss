@@ -1,0 +1,28 @@
+.add-new-blog-container{
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: grey;
+    padding: 15px;
+    font-weight: 800;
+    font-size: 20px;
+    .add-component{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        .add-title{
+            font-size: 16px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        .add-input{
+            font-size: 16px;
+            width: 400px;
+        }
+        .add-btn{
+            margin: 10px auto;
+            font-size: 14px;
+            font-weight: 700;
+            width: 100px;
+        }
+    }
+}
