@@ -4,7 +4,7 @@ import './AddNewBlog.scss';
 const AddNewBlog = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-
+    // xem thêm react hook form để tăng hiệu suất validate thông tin đối với những form nhiều dòng input
     const handleOnChangeTitle = (event) => {
         setTitle(event.target.value);
     }
@@ -12,6 +12,14 @@ const AddNewBlog = () => {
         setContent(event.target.value)
     }
     const handleOnClickSubmit = () => {
+        if (!title) {
+            alert('missing title!');
+            return;
+        }
+        if (!content) {
+            alert('missing content!');
+            return;
+        }
         console.log('check submit: ', title, content);
     }
     return (
