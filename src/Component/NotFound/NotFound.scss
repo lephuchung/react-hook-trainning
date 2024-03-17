@@ -1,0 +1,19 @@
+.notfound-container{
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4{
+        margin-top: 20px;
+    }
+    h5{
+        margin: 10px;
+    }
+    button{
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+}

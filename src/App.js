@@ -15,6 +15,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import NotFound from './Component/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/blog/add-new-blog' element={<AddNewBlog />} />
             <Route path='/blog' element={<Blog />} />
             <Route path='/' element={<Example />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </header>
       </div>
