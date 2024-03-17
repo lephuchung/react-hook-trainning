@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './AddNewBlog.scss';
+import axios from 'axios';
 
-const AddNewBlog = () => {
+const AddNewBlog = (props) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     // xem thêm react hook form để tăng hiệu suất validate thông tin đối với những form nhiều dòng input
@@ -11,7 +12,7 @@ const AddNewBlog = () => {
     const handleOnChangeContent = (event) => {
         setContent(event.target.value)
     }
-    const handleOnClickSubmit = () => {
+    const handleOnClickSubmit = async () => {
         if (!title) {
             alert('missing title!');
             return;
@@ -20,11 +21,23 @@ const AddNewBlog = () => {
             alert('missing content!');
             return;
         }
-        console.log('check submit: ', title, content);
+
+        let data = {
+            title: title,
+            body: content,
+            userId: 1,
+        }
+
+        let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data);
+        if (res && res.data) {
+            let newBlog = res.data;
+            props.handleAddNew(newBlog);
+            console.log('check new blog: ', newBlog);
+        }
+        console.log('check res: ', res);
     }
     return (
         <div className='add-new-blog-container'>
-            <div>--- Add New Blog ---</div>
             <div className='add-component'>
                 <label className='add-title'>Title:</label>
                 <input className='add-input' type='text' value={title} onChange={(event) => handleOnChangeTitle(event)} />
